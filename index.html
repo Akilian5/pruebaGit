@@ -1,13 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Merge</title>
+  <meta charset="utf-8" />
+  <title>Interfaz simple - Parqueadero (HTML puro)</title>
 </head>
 <body>
-    <H1>Titulo de prueba Juan Gongora</H1>
+  <h1>Parqueadero - Interfaz (HTML puro)</h1>
 
-    <H2>Texto Hola Mundo</H2>
+  <p>
+    Estado general:
+    <!-- meter muestra visualmente la ocupación -->
+    <meter id="ocupacion" value="8" min="0" max="20">8 de 20</meter>
+    <small> 8 / 20 plazas ocupadas (ejemplo estático)</small>
+  </p>
+
+  <p>
+    Leyenda:
+    <ul>
+      <li><input type="checkbox" disabled checked /> Ocupada (ejemplo)</li>
+      <li><input type="checkbox" disabled /> Libre</li>
+    </ul>
+  </p>
+
+  <!-- Formulario simulado para interactuar (sin JS, los cambios son locales en la sesión) -->
+  <form method="get" action="#">
+    <table border="1" cellspacing="4" cellpadding="6">
+      <caption><strong>Plano de plazas (clic en la plaza para ver detalles)</strong></caption>
+      <!-- Filas: 5 filas x 4 columnas = 20 plazas -->
+      <tbody>
+        <!-- Fila 1 -->
+        <tr>
+          <td>
+            <label for="p01"><input id="p01" type="checkbox" /> Plaza 01</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+              <p>Matrícula: <input type="text" name="mat_p01" placeholder="Ej: ABC-123" /></p>
+              <p>Dueño: <input type="text" name="owner_p01" placeholder="Nombre" /></p>
+            </details>
+          </td>
+          <td>
+            <label for="p02"><input id="p02" type="checkbox" checked /> Plaza 02</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Ocupada</strong></p>
+              <p>Matrícula: <input type="text" name="mat_p02" value="XYZ-789" /></p>
+              <p>Dueño: <input type="text" name="owner_p02" value="María Pérez" /></p>
+            </details>
+          </td>
+          <td>
+            <label for="p03"><input id="p03" type="checkbox" /> Plaza 03</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+              <p>Matrícula: <input type="text" name="mat_p03" placeholder="Ej: ---" /></p>
+              <p>Dueño: <input type="text" name="owner_p03" placeholder="---" /></p>
+            </details>
+          </td>
+          <td>
+            <label for="p04"><input id="p04" type="checkbox" checked /> Plaza 04</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Ocupada</strong></p>
+              <p>Matrícula: <input type="text" name="mat_p04" value="LMN-456" /></p>
+              <p>Dueño: <input type="text" name="owner_p04" value="Juan Gómez" /></p>
+            </details>
+          </td>
+        </tr>
+
+        <!-- Fila 2 -->
+        <tr>
+          <td>
+            <label for="p05"><input id="p05" type="checkbox" /> Plaza 05</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+              <p>Matrícula: <input type="text" name="mat_p05" placeholder="---" /></p>
+            </details>
+          </td>
+          <td>
+            <label for="p06"><input id="p06" type="checkbox" checked /> Plaza 06</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Ocupada</strong></p>
+              <p>Matrícula: <input type="text" name="mat_p06" value="QWE-222" /></p>
+            </details>
+          </td>
+          <td>
+            <label for="p07"><input id="p07" type="checkbox" /> Plaza 07</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p08"><input id="p08" type="checkbox" checked /> Plaza 08</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Ocupada</strong></p>
+              <p>Matrícula: <input type="text" name="mat_p08" value="TRT-111" /></p>
+            </details>
+          </td>
+        </tr>
+
+        <!-- Fila 3 -->
+        <tr>
+          <td>
+            <label for="p09"><input id="p09" type="checkbox" /> Plaza 09</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p10"><input id="p10" type="checkbox" /> Plaza 10</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p11"><input id="p11" type="checkbox" checked /> Plaza 11</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Ocupada</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p12"><input id="p12" type="checkbox" /> Plaza 12</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+        </tr>
+
+        <!-- Fila 4 -->
+        <tr>
+          <td>
+            <label for="p13"><input id="p13" type="checkbox" /> Plaza 13</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p14"><input id="p14" type="checkbox" checked /> Plaza 14</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Ocupada</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p15"><input id="p15" type="checkbox" /> Plaza 15</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p16"><input id="p16" type="checkbox" checked /> Plaza 16</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Ocupada</strong></p>
+            </details>
+          </td>
+        </tr>
+
+        <!-- Fila 5 -->
+        <tr>
+          <td>
+            <label for="p17"><input id="p17" type="checkbox" /> Plaza 17</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p18"><input id="p18" type="checkbox" /> Plaza 18</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p19"><input id="p19" type="checkbox" checked /> Plaza 19</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Ocupada</strong></p>
+            </details>
+          </td>
+          <td>
+            <label for="p20"><input id="p20" type="checkbox" /> Plaza 20</label>
+            <details>
+              <summary>Detalles</summary>
+              <p>Estado: <strong>Libre</strong></p>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <!-- botón solo para mostrar que es un formulario (no hace validaciones sin JS) -->
+      <button type="submit">Guardar (simulación)</button>
+      <button type="reset">Restablecer</button>
+    </p>
+  </form>
+
+  <hr>
+  <footer>
+    <p><small>Nota: Esta interfaz está hecha únicamente con HTML. Para añadir estilos visuales o lógica (calcular ocupación en tiempo real, guardar datos) se requeriría CSS y/o JavaScript o un backend.</small></p>
+  </footer>
 </body>
 </html>
