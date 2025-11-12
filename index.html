@@ -2,215 +2,57 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Interfaz simple - Parqueadero (HTML puro)</title>
+  <title>Pokémon (SVG)</title>
 </head>
 <body>
-  <h1>Parqueadero - Interfaz (HTML puro)</h1>
+  <h1>Un Pokémon dibujado con SVG (HTML puro)</h1>
 
-  <p>
-    Estado general:
-    <!-- meter muestra visualmente la ocupación -->
-    <meter id="ocupacion" value="8" min="0" max="20">8 de 20</meter>
-    <small> 8 / 20 plazas ocupadas (ejemplo estático)</small>
-  </p>
+  <!-- SVG que dibuja un Pokémon estilo "Pikachu" simple -->
+  <svg width="360" height="360" viewBox="0 0 360 360" role="img" aria-label="Dibujo estilo Pikachu">
+    <!-- Cuerpo -->
+    <ellipse cx="180" cy="210" rx="95" ry="90" fill="#FFD54A" stroke="#B8860B" stroke-width="3"/>
 
-  <p>
-    Leyenda:
-    <ul>
-      <li><input type="checkbox" disabled checked /> Ocupada (ejemplo)</li>
-      <li><input type="checkbox" disabled /> Libre</li>
-    </ul>
-  </p>
+    <!-- Cabeza -->
+    <circle cx="180" cy="120" r="70" fill="#FFD54A" stroke="#B8860B" stroke-width="3"/>
 
-  <!-- Formulario simulado para interactuar (sin JS, los cambios son locales en la sesión) -->
-  <form method="get" action="#">
-    <table border="1" cellspacing="4" cellpadding="6">
-      <caption><strong>Plano de plazas (clic en la plaza para ver detalles)</strong></caption>
-      <!-- Filas: 5 filas x 4 columnas = 20 plazas -->
-      <tbody>
-        <!-- Fila 1 -->
-        <tr>
-          <td>
-            <label for="p01"><input id="p01" type="checkbox" /> Plaza 01</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-              <p>Matrícula: <input type="text" name="mat_p01" placeholder="Ej: ABC-123" /></p>
-              <p>Dueño: <input type="text" name="owner_p01" placeholder="Nombre" /></p>
-            </details>
-          </td>
-          <td>
-            <label for="p02"><input id="p02" type="checkbox" checked /> Plaza 02</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Ocupada</strong></p>
-              <p>Matrícula: <input type="text" name="mat_p02" value="XYZ-789" /></p>
-              <p>Dueño: <input type="text" name="owner_p02" value="María Pérez" /></p>
-            </details>
-          </td>
-          <td>
-            <label for="p03"><input id="p03" type="checkbox" /> Plaza 03</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-              <p>Matrícula: <input type="text" name="mat_p03" placeholder="Ej: ---" /></p>
-              <p>Dueño: <input type="text" name="owner_p03" placeholder="---" /></p>
-            </details>
-          </td>
-          <td>
-            <label for="p04"><input id="p04" type="checkbox" checked /> Plaza 04</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Ocupada</strong></p>
-              <p>Matrícula: <input type="text" name="mat_p04" value="LMN-456" /></p>
-              <p>Dueño: <input type="text" name="owner_p04" value="Juan Gómez" /></p>
-            </details>
-          </td>
-        </tr>
+    <!-- Orejas -->
+    <polygon points="120,30 140,95 110,105" fill="#FFD54A" stroke="#B8860B" stroke-width="3"/>
+    <polygon points="240,30 220,95 250,105" fill="#FFD54A" stroke="#B8860B" stroke-width="3"/>
+    <!-- Puntas negras orejas -->
+    <polygon points="110,30 120,60 100,72" fill="#252525"/>
+    <polygon points="250,30 240,60 260,72" fill="#252525"/>
 
-        <!-- Fila 2 -->
-        <tr>
-          <td>
-            <label for="p05"><input id="p05" type="checkbox" /> Plaza 05</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-              <p>Matrícula: <input type="text" name="mat_p05" placeholder="---" /></p>
-            </details>
-          </td>
-          <td>
-            <label for="p06"><input id="p06" type="checkbox" checked /> Plaza 06</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Ocupada</strong></p>
-              <p>Matrícula: <input type="text" name="mat_p06" value="QWE-222" /></p>
-            </details>
-          </td>
-          <td>
-            <label for="p07"><input id="p07" type="checkbox" /> Plaza 07</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p08"><input id="p08" type="checkbox" checked /> Plaza 08</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Ocupada</strong></p>
-              <p>Matrícula: <input type="text" name="mat_p08" value="TRT-111" /></p>
-            </details>
-          </td>
-        </tr>
+    <!-- Mejillas -->
+    <circle cx="140" cy="130" r="18" fill="#FF4D4D"/>
+    <circle cx="220" cy="130" r="18" fill="#FF4D4D"/>
 
-        <!-- Fila 3 -->
-        <tr>
-          <td>
-            <label for="p09"><input id="p09" type="checkbox" /> Plaza 09</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p10"><input id="p10" type="checkbox" /> Plaza 10</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p11"><input id="p11" type="checkbox" checked /> Plaza 11</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Ocupada</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p12"><input id="p12" type="checkbox" /> Plaza 12</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-        </tr>
+    <!-- Ojos -->
+    <ellipse cx="160" cy="115" rx="10" ry="16" fill="#111"/>
+    <ellipse cx="200" cy="115" rx="10" ry="16" fill="#111"/>
+    <!-- Brillos ojos -->
+    <circle cx="156" cy="108" r="3" fill="#fff"/>
+    <circle cx="196" cy="108" r="3" fill="#fff"/>
 
-        <!-- Fila 4 -->
-        <tr>
-          <td>
-            <label for="p13"><input id="p13" type="checkbox" /> Plaza 13</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p14"><input id="p14" type="checkbox" checked /> Plaza 14</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Ocupada</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p15"><input id="p15" type="checkbox" /> Plaza 15</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p16"><input id="p16" type="checkbox" checked /> Plaza 16</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Ocupada</strong></p>
-            </details>
-          </td>
-        </tr>
+    <!-- Nariz -->
+    <circle cx="180" cy="135" r="3" fill="#331"/>
+    <!-- Boca -->
+    <path d="M170 148 Q180 158 190 148" stroke="#330" stroke-width="3" fill="none" stroke-linecap="round"/>
 
-        <!-- Fila 5 -->
-        <tr>
-          <td>
-            <label for="p17"><input id="p17" type="checkbox" /> Plaza 17</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p18"><input id="p18" type="checkbox" /> Plaza 18</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p19"><input id="p19" type="checkbox" checked /> Plaza 19</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Ocupada</strong></p>
-            </details>
-          </td>
-          <td>
-            <label for="p20"><input id="p20" type="checkbox" /> Plaza 20</label>
-            <details>
-              <summary>Detalles</summary>
-              <p>Estado: <strong>Libre</strong></p>
-            </details>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Cola (zigzag) -->
+    <g transform="translate(260,180) rotate(10)">
+      <polygon points="0,0 40,-10 20,20 60,20 30,60 0,40 20,10" fill="#FFD54A" stroke="#B8860B" stroke-width="3"/>
+      <!-- detalle marrón base -->
+      <rect x="50" y="10" width="12" height="20" fill="#8B5A2B" transform="rotate(-15 56 20)"/>
+    </g>
 
-    <p>
-      <!-- botón solo para mostrar que es un formulario (no hace validaciones sin JS) -->
-      <button type="submit">Guardar (simulación)</button>
-      <button type="reset">Restablecer</button>
-    </p>
-  </form>
+    <!-- Patas -->
+    <ellipse cx="140" cy="285" rx="25" ry="12" fill="#FFD54A" stroke="#B8860B" stroke-width="3"/>
+    <ellipse cx="220" cy="285" rx="25" ry="12" fill="#FFD54A" stroke="#B8860B" stroke-width="3"/>
 
-  <hr>
-  <footer>
-    <p><small>Nota: Esta interfaz está hecha únicamente con HTML. Para añadir estilos visuales o lógica (calcular ocupación en tiempo real, guardar datos) se requeriría CSS y/o JavaScript o un backend.</small></p>
-  </footer>
+    <!-- Sombras simples -->
+    <ellipse cx="180" cy="310" rx="75" ry="12" fill="#000" opacity="0.08"/>
+  </svg>
+
+  <p>Es un dibujo sencillo y totalmente en HTML (SVG). Si quieres la versión con una imagen real, animaciones o interacción (p.ej. hacer que parpadee), dime y te la doy con HTML+CSS o JavaScript.</p>
 </body>
 </html>
